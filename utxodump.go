@@ -342,9 +342,9 @@ func main() {
                     if nsize == 0 {
                         if fieldsSelected["address"] { // only work out addresses if they're wanted
                             if testnet == true {
-                                address = keys.Hash160ToAddress(script, []byte{0x6f}) // (m/n)address - testnet addresses have a special prefix
+                                address = keys.Hash160ToAddress(script, []byte{0x6e}) // (m/n)address - testnet addresses have a special prefix
                             } else {
-                                address = keys.Hash160ToAddress(script, []byte{0x00}) // 1address
+                                address = keys.Hash160ToAddress(script, []byte{0x6e}) // 1address
                             }
                         }
                         scriptType = "p2pkh"
