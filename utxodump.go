@@ -50,7 +50,7 @@ func main() {
     defaultfile := "utxodump.csv"
 
     // Command Line Options (Flags)
-    chainstate := flag.String("db", defaultfolder, "Location of bitcoin chainstate db.") // chainstate folder
+    chainstate := flag.String("db", defaultfolder, "!Location of bitcoin chainstate db.") // chainstate folder
     file := flag.String("o", defaultfile, "Name of file to dump utxo list to.") // output file
     fields := flag.String("f", "count,txid,vout,amount,type,address", "Fields to include in output. [count,txid,vout,height,amount,coinbase,nsize,script,type,address]")
     testnetflag := flag.Bool("testnet", false, "Is the chainstate leveldb for testnet?") // true/false
