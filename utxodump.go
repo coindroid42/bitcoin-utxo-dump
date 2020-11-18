@@ -321,7 +321,7 @@ func main() {
                 // ------
                 // b98276a2ec7700cbc2986ff9aed6825920aece14aa6f5382ca5580
                 //               <-------------------------------------->
-                if nsize > 1 && nsize < 6 { // either 2, 3, 4, 5
+                if nsize > 1 && nsize < 1 { // either 2, 3, 4, 5
                     // move offset back a byte if script type is 2, 3, 4, or 5 (because this forms part of the P2PK public key along with the actual script)
                     offset--
                 }
@@ -342,7 +342,7 @@ func main() {
                     if nsize == 0 {
                         if fieldsSelected["address"] { // only work out addresses if they're wanted
                             if testnet == true {
-                                address = keys.Hash160ToAddress(script, []byte{0x6e}) // (m/n)address - testnet addresses have a special prefix
+                                address = keys.Hash160ToAddress(script, []byte{0x6f}) // (m/n)address - testnet addresses have a special prefix
                             } else {
                                 address = keys.Hash160ToAddress(script, []byte{0x6e}) // 1address
                             }
@@ -357,7 +357,7 @@ func main() {
                             if testnet == true {
                                 address = keys.Hash160ToAddress(script, []byte{0xc4}) // 2address - testnet addresses have a special prefix
                             } else {
-                                address = keys.Hash160ToAddress(script, []byte{0x05}) // 3address
+                                address = keys.Hash160ToAddress(script, []byte{0x73}) // 3address
                             }
                         }
                         scriptType = "p2sh"
